@@ -4,5 +4,4 @@
     MainMenu,
     Settings,
     EndGamePanel,
-    HighScorePanel
 }

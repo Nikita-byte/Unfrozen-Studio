@@ -8,12 +8,6 @@ public class EventManager
     private Dictionary<EventType, Action> _events;
     public Dictionary<EventType, Action> Events => _events;
 
-    public Action ShakeCamera = delegate { };
-
-    //public Action<ElementType> LVLEvent = delegate { };
-    public Action<int> ScoreEvent = delegate { };
-    public Action<int> ScoreWheelEvent = delegate { };
-
     public void Initialize()
     {
         _events = new Dictionary<EventType, Action>();

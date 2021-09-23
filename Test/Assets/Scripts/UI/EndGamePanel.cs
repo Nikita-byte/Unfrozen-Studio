@@ -1,7 +1,6 @@
 ﻿using System;
 using UnityEngine.UI;
 using UnityEngine;
-using DG.Tweening;
 using TMPro;
 
 
@@ -27,14 +26,12 @@ public class EndGamePanel : BasePanel
 
     public override void Hide()
     {
-        GetComponent<RectTransform>().DOAnchorPos(new Vector2(-350, 0), 0.3f);
         gameObject.SetActive(false);
     }
 
     public override void Show()
     {
         gameObject.SetActive(true);
-        GetComponent<RectTransform>().DOAnchorPos(new Vector2(0, 0), 0.3f);
     }
 
     public void SetScreen(Sprite screen)

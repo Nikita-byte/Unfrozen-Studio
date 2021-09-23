@@ -9,7 +9,7 @@ public sealed class ObjectPool
     private GameObject _pool;
 
     private GameObject _camera;
-    private GameObject _backGround;
+    //private GameObject _backGround;
 
     private ObjectFactory _objectFactory;
 
@@ -29,8 +29,9 @@ public sealed class ObjectPool
     {
         _objectFactory = new ObjectFactory();
         _pool = new GameObject("[Pool]");
+        _camera = _objectFactory.Camera;
 
-        _backGround = _objectFactory.BackGround;
+        //_backGround = _objectFactory.BackGround;
 
 
         //for (int i = 0; i < _countOfArrows; i++)
@@ -48,10 +49,10 @@ public sealed class ObjectPool
 
         switch (objectType)
         {
-            case ObjectType.BackGround:
-                go = _backGround;
-                go.transform.position = Vector3.zero;
-                break;
+            //case ObjectType.BackGround:
+            //    go = _backGround;
+            //    go.transform.position = Vector3.zero;
+            //    break;
             case ObjectType.Camera:
                 go = _camera;
                 break;
@@ -73,8 +74,6 @@ public sealed class ObjectPool
 
         switch (objectType)
         {
-            case ObjectType.BackGround:
-                break;
             case ObjectType.Camera:
                 break;
 

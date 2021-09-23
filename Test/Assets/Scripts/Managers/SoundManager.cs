@@ -23,15 +23,15 @@ public class SoundManager
     {
         _sounds = new Dictionary<string, GameObject>();
         _sources = new List<AudioSource>();
-        GameObject[] gameobjects = Resources.LoadAll<GameObject>(AssetsPath.Path[ObjectType.Sound]);
+        //GameObject[] gameobjects = Resources.LoadAll<GameObject>(AssetsPath.Path[ObjectType.Sound]);
 
-        foreach (GameObject gameobject in gameobjects)
-        {
-            GameObject go = GameObject.Instantiate(gameobject);
-            go.transform.SetParent(sound.transform);
-            _sources.Add(go.GetComponent<AudioSource>());
-            _sounds.Add(gameobject.name, go);
-        }
+        //foreach (GameObject gameobject in gameobjects)
+        //{
+        //    GameObject go = GameObject.Instantiate(gameobject);
+        //    go.transform.SetParent(sound.transform);
+        //    _sources.Add(go.GetComponent<AudioSource>());
+        //    _sounds.Add(gameobject.name, go);
+        //}
 
         //_audioListener = ObjectPool.Instance.GetObject(ObjectType.Camera).GetComponent<AudioListener>();
     }

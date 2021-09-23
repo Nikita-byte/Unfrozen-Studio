@@ -34,9 +34,6 @@ public class ScreenInterface
             case PanelType.EndGamePanel:
                 _currentPanel = _screenFactory.EndGamePanel;
                 break;
-            case PanelType.HighScorePanel:
-                _currentPanel = _screenFactory.HighScorePanel;
-                break;
         }
 
         _currentPanel.Show();

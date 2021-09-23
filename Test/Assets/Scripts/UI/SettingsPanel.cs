@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
-using DG.Tweening;
 
 
 public class SettingsPanel : BasePanel
@@ -30,14 +29,12 @@ public class SettingsPanel : BasePanel
 
     public override void Hide()
     {
-        GetComponent<RectTransform>().DOAnchorPos(new Vector2(-350, 0), 0.3f);
         gameObject.SetActive(false);
     }
 
     public override void Show()
     {
         gameObject.SetActive(true);
-        GetComponent<RectTransform>().DOAnchorPos(new Vector2(0, 0), 0.3f);
     }
 
     public void SetScreen(Sprite screen)
