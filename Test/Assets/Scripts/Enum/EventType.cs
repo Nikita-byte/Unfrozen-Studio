@@ -3,5 +3,6 @@
     StartGame,
     MainMenu,
     EndGame,
-    StartWheel
+    StartWheel,
+    Round
 }

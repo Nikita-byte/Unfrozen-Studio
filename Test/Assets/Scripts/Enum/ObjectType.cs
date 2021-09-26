@@ -8,6 +8,8 @@
     GamePanel,
     SettingsPanel,
     EndGamePanel,
+    HighScorePanel,
+    BackGround,
 
-
+    Warrior
 }

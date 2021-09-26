@@ -32,7 +32,9 @@ public sealed class AssetsPath
             {
                 ObjectType.BackGround, "BackGround"
             },
-
+            {
+                ObjectType.Warrior, "sword_man"
+            },
 
         };
 }

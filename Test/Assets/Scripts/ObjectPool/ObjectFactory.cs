@@ -53,6 +53,15 @@ public class ObjectFactory
         }
     }
 
+    public GameObject Warrior
+    {
+        get
+        {
+            GameObject warrior = GameObject.Instantiate(Resources.Load<GameObject>(AssetsPath.Path[ObjectType.Warrior]));
+            return warrior;
+        }
+    }
+
     //public GameObject BackGround
     //{
     //    get

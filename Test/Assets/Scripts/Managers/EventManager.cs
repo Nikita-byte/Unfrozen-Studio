@@ -8,6 +8,8 @@ public class EventManager
     private Dictionary<EventType, Action> _events;
     public Dictionary<EventType, Action> Events => _events;
 
+    public Action<int> Round = delegate{};
+
     public void Initialize()
     {
         _events = new Dictionary<EventType, Action>();
