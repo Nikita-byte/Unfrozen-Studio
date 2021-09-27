@@ -6,17 +6,22 @@ public class BaseWarrior : MonoBehaviour, IComparable
     [SerializeField] private ArmyType _armyType;
     [SerializeField] private int _initiative;
     [SerializeField] private int _speed;
+    [SerializeField] private bool _isDead;
+    [SerializeField] private bool _isInactive;
 
     private int _currentRound = 1;
+    private Animator _animator;
 
     public ArmyType ArmyType { get => _armyType; }
-
     public int Initiative { get => _initiative; }
     public int Speed { get => _speed; }
+    public bool IsDead;
+    public bool IsInactive;
 
     private void Awake()
     {
         EventManager.Instance.Round += SetRound;
+        _animator = GetComponent<Animator>(); 
     }
 
     public int CompareTo(object obj)
@@ -61,11 +66,24 @@ public class BaseWarrior : MonoBehaviour, IComparable
         }    
     }
 
-    public void SetSpecifications(ArmyType armyType, int initiative, int speed)
+    public virtual void SetSpecifications(ArmyType armyType, int initiative, int speed)
     {
          _armyType = armyType;
          _initiative = initiative;
          _speed = speed;
+    }
+
+    public virtual void Die()
+    {
+        IsDead = true;
+        IsInactive = true;
+        _animator.SetBool("Die", true);
+    }
+
+    public virtual void Life()
+    {
+        IsDead = false;
+        _animator.SetBool("Die", false);
     }
 
     private void SetRound(int round)

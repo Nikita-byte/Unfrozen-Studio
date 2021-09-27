@@ -11,7 +11,7 @@ public class GameController : MonoBehaviour
         ObjectPool.Instance.GetObject(ObjectType.Camera).SetActive(true);
         EventManager.Instance.Initialize();
         StateCreator.Instance.SetGameController(this);
-        //SoundManager.Instance.Sounds["StreetLove"].GetComponent<AudioSource>().Play();
+        SoundManager.Instance.PlaySound(SoundType.Music);
 
         SetState(StateCreator.Instance.MainMenuState);
     }

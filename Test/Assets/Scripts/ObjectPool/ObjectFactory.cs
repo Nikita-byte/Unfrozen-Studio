@@ -13,19 +13,19 @@ public class ObjectFactory
         _sprites = new Dictionary<string, Sprite>();
         _sounds = new Dictionary<string, GameObject>();
         Sprite[] sprites = Resources.LoadAll<Sprite>(AssetsPath.Path[ObjectType.Sprites]);
-        //GameObject[] gameobjects = Resources.LoadAll<GameObject>(AssetsPath.Path[ObjectType.Sound]);
+        GameObject[] gameobjects = Resources.LoadAll<GameObject>(AssetsPath.Path[ObjectType.Sound]);
 
         foreach (Sprite sprite in sprites)
         {
             _sprites.Add(sprite.name, sprite);
         }
 
-        //foreach (GameObject gameobject in gameobjects)
-        //{
-        //    GameObject go = GameObject.Instantiate(gameobject);
-        //    go.transform.SetParent(sound.transform);
-        //    _sounds.Add(gameobject.name, go);
-        //}
+        foreach (GameObject gameobject in gameobjects)
+        {
+            GameObject go = GameObject.Instantiate(gameobject);
+            go.transform.SetParent(sound.transform);
+            _sounds.Add(gameobject.name, go);
+        }
     }
 
     public Dictionary<string, Sprite> Sprites 
@@ -61,14 +61,4 @@ public class ObjectFactory
             return warrior;
         }
     }
-
-    //public GameObject BackGround
-    //{
-    //    get
-    //    {
-    //        GameObject bg = GameObject.Instantiate(Resources.Load<GameObject>(AssetsPath.Path[ObjectType.BackGround]));
-    //        bg.GetComponent<SpriteRenderer>().sprite = _sprites["bg"];
-    //        return bg;
-    //    }
-    //}
 }

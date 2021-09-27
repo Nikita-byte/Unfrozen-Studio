@@ -9,10 +9,19 @@ public class StateCreator
     public EndGameState EndGameState;
     public GameState GameState;
 
+    public AnimationState AnimationState;
+    public TurnState TurnState;
+
     public void SetGameController(GameController gameController)
     {
         MainMenuState = new MainMenuState(gameController);
         EndGameState = new EndGameState(gameController);
         GameState = new GameState(gameController);
+    }
+
+    public void SetFightController(FightController fightController)
+    {
+        AnimationState = new AnimationState(fightController);
+        TurnState = new TurnState(fightController);
     }
 }

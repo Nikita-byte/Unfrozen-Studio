@@ -21,19 +21,13 @@ public sealed class AssetsPath
                 ObjectType.GamePanel, "UI/GamePanel"
             },
             {
-                ObjectType.SettingsPanel, "UI/Settings"
-            },
-            {
                 ObjectType.EndGamePanel, "UI/EndGamePanel"
             },
             {
-                ObjectType.HighScorePanel, "UI/HighScorePanel"
-            },
-            {
-                ObjectType.BackGround, "BackGround"
-            },
-            {
                 ObjectType.Warrior, "sword_man"
+            },
+            {
+                ObjectType.Sound, "Sounds"
             },
 
         };

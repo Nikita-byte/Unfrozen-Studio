@@ -28,9 +28,6 @@ public class ScreenInterface
             case PanelType.GamePanel:
                 _currentPanel = _screenFactory.GamePanel;
                 break;
-            case PanelType.Settings:
-                _currentPanel = _screenFactory.SettingsPanel;
-                break;
             case PanelType.EndGamePanel:
                 _currentPanel = _screenFactory.EndGamePanel;
                 break;

@@ -23,17 +23,8 @@ public class SoundManager
     {
         _sounds = new Dictionary<string, GameObject>();
         _sources = new List<AudioSource>();
-        //GameObject[] gameobjects = Resources.LoadAll<GameObject>(AssetsPath.Path[ObjectType.Sound]);
 
-        //foreach (GameObject gameobject in gameobjects)
-        //{
-        //    GameObject go = GameObject.Instantiate(gameobject);
-        //    go.transform.SetParent(sound.transform);
-        //    _sources.Add(go.GetComponent<AudioSource>());
-        //    _sounds.Add(gameobject.name, go);
-        //}
-
-        //_audioListener = ObjectPool.Instance.GetObject(ObjectType.Camera).GetComponent<AudioListener>();
+        _sounds = ObjectPool.Instance.GetSounds();
     }
 
     public void PlaySound(SoundType soundType)
@@ -41,7 +32,7 @@ public class SoundManager
         switch (soundType)
         {
             case SoundType.Music:
-                Sounds["StreetLove"].GetComponent<AudioSource>().Play();
+                Sounds["Music"].GetComponent<AudioSource>().Play();
                 break;
         }
 
@@ -52,7 +43,7 @@ public class SoundManager
         switch (soundType)
         {
             case SoundType.Music:
-                Sounds["StreetLove"].GetComponent<AudioSource>().Stop();
+                Sounds["Music"].GetComponent<AudioSource>().Stop();
                 break;
         }
 
@@ -65,20 +56,4 @@ public class SoundManager
             source.volume = volume;
         }
     }
-
-    //public void TurnOn()
-    //{
-    //    float volume = PlayerPrefs.GetInt("Record", 0);
-
-    //    //_audioListener.enabled = true;
-    //}
-
-    //public void TurnOff(float volume)
-    //{
-    //    PlayerPrefs.SetFloat("Volume", volume);
-
-    //    SetVolume(0);
-
-    //    //_audioListener.enabled = false;
-    //}
 }

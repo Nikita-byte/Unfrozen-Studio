@@ -11,7 +11,6 @@ public sealed class ObjectPool
     private GameObject _camera;
     private int _countWarriorsInPool = 20;
     private Queue<GameObject> _warriors;
-    //private GameObject _backGround;
 
     private ObjectFactory _objectFactory;
 
@@ -34,8 +33,6 @@ public sealed class ObjectPool
         _camera = _objectFactory.Camera;
         _warriors = new Queue<GameObject>();
 
-        //_backGround = _objectFactory.BackGround;
-
 
         for (int i = 0; i < _countWarriorsInPool; i++)
         {
@@ -52,10 +49,6 @@ public sealed class ObjectPool
 
         switch (objectType)
         {
-            //case ObjectType.BackGround:
-            //    go = _backGround;
-            //    go.transform.position = Vector3.zero;
-            //    break;
             case ObjectType.Camera:
                 go = _camera;
                 break;
@@ -92,5 +85,10 @@ public sealed class ObjectPool
     public Dictionary<string, Sprite> GetSprites()
     {
         return _objectFactory.Sprites;
+    }
+
+    public Dictionary<string, GameObject> GetSounds()
+    {
+        return _objectFactory.Sounds;
     }
 }

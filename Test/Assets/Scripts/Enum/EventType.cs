@@ -3,6 +3,11 @@
     StartGame,
     MainMenu,
     EndGame,
-    StartWheel,
-    Round
+    Round,
+
+    Turn,
+    Animation,
+
+    SkipTurn,
+    Kill
 }

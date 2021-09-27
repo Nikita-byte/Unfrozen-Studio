@@ -7,7 +7,6 @@ public class ScreenFactory
     private GameObject _canvas;
     private MainMenu _mainMenu;
     private GamePanel _gamePanel;
-    private SettingsPanel _settingsPanel;
     private EndGamePanel _endGamePanel;
 
 
@@ -58,20 +57,6 @@ public class ScreenFactory
                 _endGamePanel = go.GetComponent<EndGamePanel>();
             }
             return _endGamePanel;
-        }
-    }
-
-    public SettingsPanel SettingsPanel
-    {
-        get
-        {
-            if (_settingsPanel == null)
-            {
-                GameObject go = GameObject.Instantiate(Resources.Load<GameObject>(AssetsPath.Path[ObjectType.SettingsPanel]), _canvas.transform.position, Quaternion.identity, _canvas.transform);
-                _settingsPanel = go.GetComponent<SettingsPanel>();
-            }
-
-            return _settingsPanel;
         }
     }
 }
